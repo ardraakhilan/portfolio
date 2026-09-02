@@ -1,55 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Ardra Akhilan — Marketing & Creative Strategy</title>
 
-<meta
-name="description"
-content="Ardra Akhilan — Marketing, analytics, storytelling and creative strategy."
->
+<meta name="description" content="Ardra Akhilan — Marketing, analytics, storytelling and creative strategy.">
 
-<link
-rel="icon"
-href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23141414'/%3E%3Ctext x='50' y='67' text-anchor='middle' font-size='54' font-family='Arial' fill='white'%3EA%3C/text%3E%3C/svg%3E"
->
+<!-- Browser / domain icon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23151515'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='54' font-weight='700' text-anchor='middle' fill='%23FFD447'%3EA%3C/text%3E%3C/svg%3E">
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 
 :root {
-
-    --ink: #151515;
-    --cream: #f8f6f1;
-    --white: #ffffff;
-
-    --yellow: #f6cf45;
-    --pink: #ff9fc5;
-    --blue: #a9ddff;
-    --green: #bde8c8;
-    --purple: #c7b7ff;
-    --orange: #ffb36b;
-
+    --black: #151515;
+    --cream: #f7f4ee;
+    --white: #fffdf9;
+    --yellow: #ffd447;
+    --blue: #9edbff;
+    --pink: #ff9fc4;
+    --green: #b9e7c5;
+    --lavender: #c9b8ff;
     --line: #dedbd3;
-    --muted: #686868;
-
+    --muted: #6e6b65;
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -58,16 +38,10 @@ html {
 }
 
 body {
-
+    margin: 0;
     background: var(--cream);
-
-    color: var(--ink);
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    color: var(--black);
+    font-family: "DM Sans", sans-serif;
     overflow-x: hidden;
 }
 
@@ -76,104 +50,85 @@ a {
     text-decoration: none;
 }
 
-button {
-    font-family: inherit;
-}
-
 img,
 video {
-    display: block;
     max-width: 100%;
+    display: block;
 }
 
-
-/* =========================================================
+/* -------------------------
    NAVIGATION
-========================================================= */
+------------------------- */
 
-.navbar {
-
+nav {
+    height: 82px;
+    width: 100%;
     position: fixed;
-
     top: 0;
     left: 0;
+    z-index: 1000;
 
-    width: 100%;
-
-    height: 78px;
-
-    padding:
-        0 5vw;
-
-    display: flex;
-
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
 
-    justify-content: space-between;
+    padding: 0 5vw;
 
-    background:
-        rgba(248,246,241,.86);
+    background: rgba(247,244,238,.88);
+    backdrop-filter: blur(16px);
 
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-    border-bottom:
-        1px solid rgba(0,0,0,.07);
-
-    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
-
 .logo {
-
-    font-size: 21px;
-
+    font-size: 22px;
     font-weight: 700;
-
     letter-spacing: -1px;
 }
 
-
 .nav-links {
-
     display: flex;
-
     gap: 38px;
-
-    align-items: center;
-
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 600;
 }
-
 
 .nav-links a {
-
     position: relative;
-
-    transition:
-        opacity .25s ease;
 }
 
-
-.nav-links a:hover {
-    opacity: .55;
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--black);
+    transition: .3s ease;
 }
 
+.nav-links a:hover::after {
+    width: 100%;
+}
 
-.resume {
+.resume-wrap {
+    justify-self: end;
+}
 
-    background: var(--ink);
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
+    background: var(--black);
     color: white;
 
-    padding:
-        14px 22px;
+    padding: 14px 22px;
+    border-radius: 100px;
 
-    border-radius: 13px;
-
+    font-size: 14px;
     font-weight: 600;
 
     transition:
@@ -181,1824 +136,1008 @@ video {
         box-shadow .3s ease;
 }
 
-
-.resume:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 12px 25px
-        rgba(0,0,0,.18);
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.15);
 }
 
-
-/* =========================================================
+/* -------------------------
    HERO
-========================================================= */
+------------------------- */
 
 .hero {
-
     min-height: 100vh;
-
-    padding:
-        140px 7vw 80px;
+    padding: 150px 7vw 80px;
 
     display: grid;
-
-    grid-template-columns:
-        1.05fr .95fr;
-
+    grid-template-columns: 1.05fr .95fr;
+    gap: 50px;
     align-items: center;
 
     position: relative;
+}
+
+.hero-copy {
+    max-width: 720px;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    margin: 0;
+
+    font-size: clamp(65px, 9vw, 135px);
+    line-height: .82;
+    letter-spacing: -7px;
+}
+
+.hero h1 span {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -6px;
+}
+
+.hero-description {
+    max-width: 590px;
+    margin-top: 42px;
+
+    font-size: clamp(17px, 1.5vw, 21px);
+    line-height: 1.55;
+    color: #55524d;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 25px;
+}
+
+.tag {
+    padding: 9px 15px;
+    border: 1px solid #d5d1c8;
+    background: rgba(255,255,255,.55);
+    border-radius: 100px;
+    font-size: 13px;
+}
+
+.hero-actions {
+    margin-top: 35px;
+}
+
+.hero-visual {
+    min-height: 620px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Floating blobs */
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.blob-yellow {
+    width: 115px;
+    height: 115px;
+    background: var(--yellow);
+    right: 5%;
+    top: 13%;
+}
+
+.blob-blue {
+    width: 65px;
+    height: 65px;
+    background: var(--blue);
+    left: 7%;
+    bottom: 25%;
+    animation-delay: 1s;
+}
+
+.blob-pink {
+    width: 35px;
+    height: 35px;
+    background: var(--pink);
+    right: 3%;
+    bottom: 19%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-22px) rotate(7deg);
+    }
+}
+
+/* Photo frame */
+
+.photo-frame {
+    width: min(450px, 75%);
+    aspect-ratio: .78;
+
+    position: relative;
+    z-index: 5;
+
+    padding: 12px;
+
+    background: white;
+
+    border-radius: 48% 48% 42% 42% / 35% 35% 48% 48%;
+
+    transform: rotate(3deg);
+
+    box-shadow:
+        0 35px 70px rgba(0,0,0,.13);
+
+    animation: photoFloat 6s ease-in-out infinite;
+}
+
+.photo-frame::before {
+    content: "";
+    position: absolute;
+    inset: -18px;
+
+    border: 2px solid white;
+
+    border-radius: inherit;
+
+    z-index: -1;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: inherit;
+}
+
+@keyframes photoFloat {
+    0%,100% {
+        transform: rotate(3deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-1deg) translateY(-12px);
+    }
+}
+
+.photo-note {
+    position: absolute;
+    z-index: 10;
+
+    right: -20px;
+    bottom: 65px;
+
+    background: white;
+    padding: 18px 22px;
+
+    border-radius: 18px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transform: rotate(-4deg);
+
+    box-shadow: 0 18px 35px rgba(0,0,0,.13);
+}
+
+.photo-note small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+/* -------------------------
+   SECTION COMMON
+------------------------- */
+
+section {
+    padding: 120px 7vw;
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 50px;
+
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 30px;
+    margin-bottom: 65px;
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.section-title {
+    margin: 8px 0 0;
+
+    font-size: clamp(45px, 6vw, 82px);
+    letter-spacing: -4px;
+    line-height: .9;
+}
+
+.section-intro {
+    max-width: 350px;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+/* -------------------------
+   LITTLE INTERACTION
+------------------------- */
+
+.interlude {
+    padding: 35px 7vw;
+}
+
+.interlude-box {
+    min-height: 170px;
+
+    background: var(--black);
+    color: white;
+
+    border-radius: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 35px 45px;
 
     overflow: hidden;
 }
 
+.interlude-text span {
+    color: var(--yellow);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-.hero::before {
+.interlude-text h3 {
+    margin: 10px 0 0;
+    font-size: clamp(25px, 4vw, 45px);
+    letter-spacing: -2px;
+}
 
+/* Interactive shapes */
+
+.shape-field {
+    width: 270px;
+    height: 100px;
+    position: relative;
+}
+
+.shape {
+    position: absolute;
+    transition: transform .5s cubic-bezier(.2,.8,.2,1);
+}
+
+.shape.circle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--yellow);
+    left: 90px;
+    top: 20px;
+}
+
+.shape.square {
+    width: 38px;
+    height: 38px;
+    background: var(--pink);
+    left: 60px;
+    top: 35px;
+}
+
+.shape-ring {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--blue);
+    border-radius: 50%;
+    right: 20px;
+    top: 10px;
+}
+
+.interlude-box:hover .circle {
+    transform: translate(30px,-15px) scale(1.2);
+}
+
+.interlude-box:hover .square {
+    transform: translate(-20px,15px) rotate(45deg);
+}
+
+.interlude-box:hover .shape-ring {
+    transform: rotate(180deg) scale(1.3);
+}
+
+/* -------------------------
+   WORK
+------------------------- */
+
+.work-item {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+
+    gap: 70px;
+
+    padding: 70px 0;
+
+    border-bottom: 1px solid var(--line);
+
+    align-items: center;
+}
+
+.work-copy {
+    max-width: 430px;
+}
+
+.work-number {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.work-copy h3 {
+    font-size: clamp(32px, 4vw, 55px);
+    line-height: .95;
+    letter-spacing: -3px;
+    margin: 12px 0 20px;
+}
+
+.work-copy p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.work-value {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 8px 13px;
+
+    border-radius: 100px;
+
+    background: var(--yellow);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.work-visual {
+    min-height: 400px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Shirt */
+
+.shirt-stage {
+    background: #e8e2d9;
+    min-height: 500px;
+}
+
+.shirt-stage video {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+}
+
+.video-label {
+    position: absolute;
+    left: 22px;
+    bottom: 20px;
+
+    background: rgba(255,255,255,.9);
+
+    padding: 10px 14px;
+
+    border-radius: 100px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* -------------------------
+   360 PACKAGE
+------------------------- */
+
+.package-stage {
+    min-height: 500px;
+    background: var(--blue);
+
+    perspective: 1200px;
+}
+
+.package-scene {
+    width: 230px;
+    height: 310px;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    animation: packageSpin 9s linear infinite;
+}
+
+.package-scene:hover {
+    animation-play-state: paused;
+}
+
+@keyframes packageSpin {
+    from {
+        transform: rotateY(0deg) rotateX(-2deg);
+    }
+
+    to {
+        transform: rotateY(360deg) rotateX(-2deg);
+    }
+}
+
+.package-face {
+    position: absolute;
+
+    width: 230px;
+    height: 310px;
+
+    border-radius: 18px;
+
+    backface-visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 25px;
+
+    box-shadow: 0 25px 40px rgba(0,0,0,.16);
+
+    border: 2px solid rgba(0,0,0,.1);
+}
+
+.package-front {
+    background: #fffaf0;
+
+    transform: translateZ(35px);
+}
+
+.package-back {
+    background: #f1eee5;
+
+    transform: rotateY(180deg) translateZ(35px);
+}
+
+.package-side {
+    position: absolute;
+
+    width: 70px;
+    height: 310px;
+
+    left: 80px;
+
+    background: #e6dfd1;
+
+    transform: rotateY(90deg) translateZ(115px);
+
+    border-radius: 8px;
+}
+
+.package-brand {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.package-title {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+
+    font-size: 35px;
+    line-height: .9;
+
+    letter-spacing: -1px;
+}
+
+.package-leaf {
+    font-size: 45px;
+}
+
+.package-bottom {
+    font-size: 10px;
+    line-height: 1.4;
+    color: #65615a;
+}
+
+.package-back .package-title {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.package-details {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.package-pill {
+    font-size: 9px;
+    padding: 6px 8px;
+    border: 1px solid #b8b2a6;
+    border-radius: 100px;
+}
+
+/* -------------------------
+   ABOUT
+------------------------- */
+
+.about {
+    background: #eae4d9;
+
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+.about h2 {
+    margin: 0;
+
+    font-size: clamp(45px, 6vw, 80px);
+    letter-spacing: -4px;
+    line-height: .9;
+}
+
+.about-copy {
+    font-size: 20px;
+    line-height: 1.65;
+    max-width: 650px;
+}
+
+.about-copy strong {
+    color: var(--black);
+}
+
+.about-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.about-chip {
+    padding: 10px 15px;
+    background: white;
+    border-radius: 100px;
+    font-size: 13px;
+}
+
+/* -------------------------
+   EXPERIENCE
+------------------------- */
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 100px;
+}
+
+.experience-title {
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: .9;
+    letter-spacing: -4px;
+    margin: 0;
+}
+
+.exp-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 30px;
+
+    padding: 25px 0;
+
+    border-top: 1px solid var(--line);
+}
+
+.exp-date {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.exp-name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.exp-desc {
+    margin-top: 7px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+/* -------------------------
+   FINAL CONTACT
+------------------------- */
+
+.contact {
+    padding-bottom: 35px;
+}
+
+.contact-card {
+    min-height: 430px;
+
+    background: var(--black);
+    color: white;
+
+    border-radius: 35px;
+
+    padding: 65px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
     content: "";
 
     position: absolute;
 
-    width: 520px;
-    height: 520px;
+    width: 350px;
+    height: 350px;
 
     border-radius: 50%;
 
-    background:
-        var(--purple);
-
-    filter:
-        blur(90px);
-
-    opacity: .25;
-
-    right: -120px;
-    top: 18%;
-
-    animation:
-        slowFloat 8s ease-in-out infinite;
-}
-
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-.hello {
-
-    font-size: 18px;
-
-    color: #666;
-
-    margin-bottom: 25px;
-
-    opacity: 0;
-
-    animation:
-        rise .9s ease forwards;
-}
-
-
-.hero h1 {
-
-    font-size:
-        clamp(72px, 9.5vw, 150px);
-
-    line-height:
-        .83;
-
-    letter-spacing:
-        -8px;
-
-    margin-bottom: 42px;
-
-    opacity: 0;
-
-    animation:
-        rise 1s .12s ease forwards;
-}
-
-
-.hero h1 em {
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-weight: 400;
-
-    letter-spacing:
-        -7px;
-}
-
-
-.hero-description {
-
-    max-width: 650px;
-
-    font-size: 20px;
-
-    line-height: 1.55;
-
-    color: #555;
-
-    margin-bottom: 30px;
-
-    opacity: 0;
-
-    animation:
-        rise 1s .25s ease forwards;
-}
-
-
-.tags {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-bottom: 35px;
-}
-
-
-.tag {
-
-    background:
-        rgba(255,255,255,.7);
-
-    border:
-        1px solid #d8d5ce;
-
-    border-radius:
-        50px;
-
-    padding:
-        10px 16px;
-
-    font-size: 14px;
-
-    transition:
-        transform .25s ease,
-        background .25s ease;
-}
-
-
-.tag:nth-child(1):hover {
     background: var(--yellow);
+
+    right: -80px;
+    top: -120px;
+
+    opacity: .9;
 }
 
-.tag:nth-child(2):hover {
-    background: var(--blue);
-}
+.contact-card::after {
+    content: "";
 
-.tag:nth-child(3):hover {
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
     background: var(--pink);
+
+    right: 150px;
+    bottom: -80px;
 }
 
-.tag:nth-child(4):hover {
-    background: var(--green);
-}
-
-
-.tag:hover {
-
-    transform:
-        translateY(-4px)
-        rotate(-2deg);
-}
-
-
-.primary {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    background:
-        var(--ink);
-
-    color: white;
-
-    padding:
-        17px 25px;
-
-    border-radius:
-        14px;
-
-    font-weight: 600;
-
-    transition:
-        transform .3s ease;
-}
-
-
-.primary:hover {
-    transform:
-        translateY(-4px);
-}
-
-
-/* =========================================================
-   HERO PHOTO
-========================================================= */
-
-.hero-visual {
-
+.contact-card > * {
     position: relative;
-
-    min-height: 620px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-.photo {
-
-    width:
-        min(440px, 78vw);
-
-    height:
-        570px;
-
-    border:
-        11px solid white;
-
-    border-radius:
-        48% 48% 40% 40%;
-
-    overflow: hidden;
-
-    transform:
-        rotate(3deg);
-
-    box-shadow:
-        0 35px 70px
-        rgba(0,0,0,.15);
-
-    position: relative;
-
-    z-index: 3;
-
-    animation:
-        photoMove 6s ease-in-out infinite;
-}
-
-
-.photo img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-}
-
-
-.decor {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    z-index: 1;
-}
-
-
-.decor.yellow {
-
-    width: 135px;
-    height: 135px;
-
-    background:
-        var(--yellow);
-
-    right: 2%;
-    top: 12%;
-
-    animation:
-        slowFloat 5s infinite;
-}
-
-
-.decor.blue {
-
-    width: 115px;
-    height: 115px;
-
-    background:
-        var(--blue);
-
-    left: 3%;
-    bottom: 14%;
-
-    animation:
-        slowFloat 6s 1s infinite;
-}
-
-
-.decor.pink {
-
-    width: 62px;
-    height: 62px;
-
-    background:
-        var(--pink);
-
-    right: 12%;
-    bottom: 7%;
-
-    animation:
-        slowFloat 4s 1s infinite;
-}
-
-
-.sticker {
-
-    position: absolute;
-
-    right: -2%;
-    bottom: 9%;
-
-    background: white;
-
-    padding:
-        18px 21px;
-
-    border-radius:
-        18px;
-
-    box-shadow:
-        0 18px 35px
-        rgba(0,0,0,.13);
-
-    transform:
-        rotate(-5deg);
-
-    z-index: 5;
-}
-
-
-.sticker strong {
-
-    display: block;
-
-    font-size: 18px;
-
-    margin-bottom: 5px;
-}
-
-
-.sticker span {
-
-    font-size: 13px;
-
-    color: #666;
-}
-
-
-/* =========================================================
-   SECTION BASICS
-========================================================= */
-
-section {
-    padding:
-        130px 7vw;
-}
-
-
-.label {
-
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        2px;
-
-    font-size: 11px;
-
-    color: #858585;
-
-    margin-bottom: 15px;
-}
-
-
-.section-title {
-
-    font-size:
-        clamp(48px, 6.5vw, 88px);
-
-    line-height:
-        .9;
-
-    letter-spacing:
-        -5px;
-}
-
-
-/* =========================================================
-   MYSTERY INTERACTION
-========================================================= */
-
-.mystery {
-
-    padding-top:
-        40px;
-
-    padding-bottom:
-        120px;
-}
-
-
-.mystery-box {
-
-    min-height:
-        250px;
-
-    border-radius:
-        30px;
-
-    background:
-        var(--ink);
-
-    position: relative;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-.mystery-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(7, 42px);
-
-    gap: 10px;
-
-    transform:
-        rotate(-4deg);
-}
-
-
-.mystery-grid span {
-
-    width: 42px;
-    height: 42px;
-
-    border-radius: 9px;
-
-    background:
-        #292929;
-
-    transition:
-        transform .35s ease,
-        background .35s ease;
-}
-
-
-.mystery-grid span:nth-child(3n) {
-    background: #303030;
-}
-
-
-.mystery-grid span:hover {
-
-    background:
-        var(--yellow);
-
-    transform:
-        scale(1.35)
-        rotate(12deg);
-}
-
-
-.mystery-orbit {
-
-    position: absolute;
-
-    width: 230px;
-    height: 230px;
-
-    border:
-        1px solid rgba(255,255,255,.1);
-
-    border-radius: 50%;
-
-    animation:
-        spin 15s linear infinite;
-}
-
-
-/* =========================================================
-   WORK HEADER
-========================================================= */
-
-.work-head {
-
-    display: flex;
-
-    align-items: end;
-
-    justify-content: space-between;
-
-    margin-bottom: 65px;
-}
-
-
-.work-intro {
-
-    max-width: 370px;
-
-    color: #666;
-
-    line-height: 1.55;
-
-    font-size: 16px;
-}
-
-
-/* =========================================================
-   WORK CARD
-========================================================= */
-
-.work {
-
-    display: grid;
-
-    grid-template-columns:
-        1.15fr .85fr;
-
-    gap: 75px;
-
-    align-items: center;
-
-    padding:
-        75px 0;
-
-    border-top:
-        1px solid var(--line);
-}
-
-
-.work.reverse {
-
-    grid-template-columns:
-        .85fr 1.15fr;
-}
-
-
-.work.reverse .work-media {
-    order: 2;
-}
-
-
-.work-media {
-
-    border-radius:
-        28px;
-
-    overflow: hidden;
-
-    background:
-        #e8e5dd;
-
-    min-height:
-        460px;
-
-    position: relative;
-
-    box-shadow:
-        0 25px 60px
-        rgba(0,0,0,.08);
-}
-
-
-.work-media video {
-
-    width: 100%;
-
-    height: 520px;
-
-    object-fit: cover;
-}
-
-
-.work-info .count {
-
-    font-size: 12px;
-
-    color: #888;
-
-    margin-bottom: 20px;
-
-    letter-spacing:
-        1px;
-}
-
-
-.work-info h3 {
-
-    font-size:
-        clamp(38px, 4vw, 58px);
-
-    line-height:
-        .95;
-
-    letter-spacing:
-        -3px;
-
-    margin-bottom: 22px;
-}
-
-
-.work-info p {
-
-    color: #666;
-
-    line-height: 1.65;
-
-    font-size: 17px;
-
-    margin-bottom: 18px;
-
-    max-width: 530px;
-}
-
-
-.reason {
-
-    display: inline-block;
-
-    margin-top: 8px;
-
-    padding:
-        10px 15px;
-
-    border-radius:
-        50px;
-
-    background:
-        var(--yellow);
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   CREATIVE EXPERIMENT 01
-========================================================= */
-
-.attention-art {
-
-    height: 520px;
-
-    background:
-        #151515;
-
-    position: relative;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-.attention-art::before {
-
-    content:
-        "LOOK";
-
-    position: absolute;
-
-    font-size:
-        190px;
-
-    font-weight:
-        900;
-
-    color:
-        rgba(255,255,255,.035);
-
-    letter-spacing:
-        -15px;
-}
-
-
-.attention-circle {
-
-    width:
-        170px;
-
-    height:
-        170px;
-
-    background:
-        var(--yellow);
-
-    border-radius:
-        50%;
-
-    position: relative;
-
     z-index: 2;
-
-    animation:
-        attentionPulse 3s infinite;
 }
 
+.contact-card h2 {
+    max-width: 750px;
 
-.attention-square {
+    font-size: clamp(55px, 8vw, 110px);
 
-    position: absolute;
+    line-height: .82;
 
-    width:
-        85px;
+    letter-spacing: -6px;
 
-    height:
-        85px;
-
-    background:
-        var(--pink);
-
-    transform:
-        rotate(45deg);
-
-    animation:
-        squareMove 5s infinite ease-in-out;
+    margin: 15px 0 0;
 }
 
-
-/* =========================================================
-   CREATIVE EXPERIMENT 02
-========================================================= */
-
-.packaging-art {
-
-    height: 520px;
-
-    background:
-        var(--blue);
-
-    position: relative;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+.contact-card h2 span {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 500;
 }
-
-
-.package {
-
-    width:
-        230px;
-
-    height:
-        300px;
-
-    background:
-        white;
-
-    border-radius:
-        25px;
-
-    transform:
-        rotate(-7deg);
-
-    box-shadow:
-        25px 30px 0
-        rgba(0,0,0,.1);
-
-    position: relative;
-
-    overflow: hidden;
-
-    transition:
-        transform .5s ease;
-}
-
-
-.package:hover {
-    transform:
-        rotate(0deg)
-        scale(1.04);
-}
-
-
-.package-top {
-
-    height:
-        75px;
-
-    background:
-        var(--yellow);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size:
-        22px;
-
-    font-weight:
-        800;
-}
-
-
-.package-body {
-
-    padding:
-        30px 24px;
-}
-
-
-.package-body h4 {
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-style:
-        italic;
-
-    font-size:
-        34px;
-
-    line-height:
-        .9;
-
-    margin-bottom:
-        20px;
-}
-
-
-.package-body p {
-
-    font-size:
-        11px;
-
-    color:
-        #777;
-}
-
-
-.package-dot {
-
-    width:
-        75px;
-
-    height:
-        75px;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--pink);
-
-    position: absolute;
-
-    right:
-        -20px;
-
-    bottom:
-        -20px;
-}
-
-
-/* =========================================================
-   CREATIVE EXPERIMENT 03
-========================================================= */
-
-.message-art {
-
-    height:
-        520px;
-
-    background:
-        var(--green);
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-}
-
-
-.message-line {
-
-    position:
-        absolute;
-
-    height:
-        3px;
-
-    width:
-        500px;
-
-    background:
-        var(--ink);
-
-    transform:
-        rotate(-14deg);
-
-    animation:
-        lineMove 4s infinite ease-in-out;
-}
-
-
-.message-card {
-
-    width:
-        300px;
-
-    background:
-        white;
-
-    border-radius:
-        22px;
-
-    padding:
-        30px;
-
-    position:
-        relative;
-
-    z-index:
-        3;
-
-    transform:
-        rotate(4deg);
-
-    box-shadow:
-        0 25px 45px
-        rgba(0,0,0,.12);
-}
-
-
-.message-card small {
-
-    color:
-        #888;
-
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        1px;
-}
-
-
-.message-card h4 {
-
-    font-size:
-        38px;
-
-    letter-spacing:
-        -2px;
-
-    line-height:
-        .95;
-
-    margin:
-        15px 0;
-}
-
-
-.message-card span {
-
-    display:
-        inline-block;
-
-    padding:
-        7px 11px;
-
-    background:
-        var(--pink);
-
-    border-radius:
-        50px;
-
-    font-size:
-        11px;
-
-    font-weight:
-        700;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about {
-
-    background:
-        #ebe7de;
-
-    display:
-        grid;
-
-    grid-template-columns:
-        .8fr 1.2fr;
-
-    gap:
-        100px;
-}
-
-
-.about h2 {
-
-    font-size:
-        clamp(55px, 6vw, 85px);
-
-    line-height:
-        .9;
-
-    letter-spacing:
-        -5px;
-}
-
-
-.about-copy {
-
-    font-size:
-        20px;
-
-    line-height:
-        1.65;
-
-    max-width:
-        650px;
-
-    color:
-        #555;
-}
-
-
-.about-copy strong {
-    color:
-        var(--ink);
-}
-
-
-/* =========================================================
-   EXPERIENCE
-========================================================= */
-
-.experience {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        .75fr 1.25fr;
-
-    gap:
-        100px;
-}
-
-
-.experience-list {
-
-    border-top:
-        1px solid var(--line);
-}
-
-
-.experience-item {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        145px 1fr;
-
-    gap:
-        30px;
-
-    padding:
-        28px 0;
-
-    border-bottom:
-        1px solid var(--line);
-
-    transition:
-        transform .3s ease;
-}
-
-
-.experience-item:hover {
-
-    transform:
-        translateX(10px);
-}
-
-
-.experience-date {
-
-    color:
-        #888;
-
-    font-size:
-        12px;
-}
-
-
-.experience-item h3 {
-
-    font-size:
-        18px;
-
-    margin-bottom:
-        8px;
-}
-
-
-.experience-item p {
-
-    color:
-        #777;
-
-    line-height:
-        1.5;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact {
-
-    background:
-        var(--ink);
-
-    color:
-        white;
-
-    border-radius:
-        35px;
-
-    margin:
-        30px 4vw;
-
-    padding:
-        90px 7vw;
-}
-
-
-.contact h2 {
-
-    font-size:
-        clamp(60px, 8vw, 115px);
-
-    line-height:
-        .83;
-
-    letter-spacing:
-        -7px;
-
-    margin-bottom:
-        40px;
-}
-
-
-.contact-description {
-
-    color:
-        #aaa;
-
-    max-width:
-        500px;
-
-    line-height:
-        1.6;
-
-    margin-bottom:
-        28px;
-}
-
-
-.email {
-
-    display:
-        inline-block;
-
-    color:
-        white;
-
-    font-size:
-        clamp(20px, 3vw, 34px);
-
-    border-bottom:
-        2px solid var(--yellow);
-
-    padding-bottom:
-        7px;
-
-    margin-bottom:
-        35px;
-}
-
 
 .contact-button {
+    margin-top: 40px;
 
-    display:
-        inline-block;
+    width: fit-content;
 
-    background:
-        var(--yellow);
+    background: white;
+    color: var(--black);
 
-    color:
-        var(--ink);
+    padding: 16px 23px;
 
-    padding:
-        16px 23px;
+    border-radius: 100px;
 
-    border-radius:
-        13px;
+    font-weight: 700;
 
-    font-weight:
-        700;
+    transition: .3s ease;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
+.contact-button:hover {
+    transform: translateY(-4px) rotate(-2deg);
+}
 
 footer {
+    padding: 25px 7vw 40px;
 
-    padding:
-        35px 7vw;
+    display: flex;
+    justify-content: space-between;
 
-    display:
-        flex;
+    color: var(--muted);
 
-    justify-content:
-        space-between;
-
-    color:
-        #888;
-
-    font-size:
-        12px;
+    font-size: 11px;
 }
 
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+/* -------------------------
+   SCROLL ANIMATION
+------------------------- */
 
 .reveal {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(45px);
-
+    opacity: 0;
+    transform: translateY(45px);
     transition:
         opacity .9s ease,
-        transform .9s ease;
+        transform .9s cubic-bezier(.2,.7,.2,1);
 }
 
-
-.reveal.visible {
-
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-
-/* =========================================================
-   KEYFRAMES
-========================================================= */
-
-@keyframes rise {
-
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
+.slide-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.7,.2,1);
 }
 
-
-@keyframes slowFloat {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-22px);
-    }
-
+.slide-left.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-
-@keyframes photoMove {
-
-    0%,100% {
-        transform:
-            rotate(3deg)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            rotate(1deg)
-            translateY(-12px);
-    }
-
+.slide-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.7,.2,1);
 }
 
-
-@keyframes spin {
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
+.slide-right.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-
-@keyframes attentionPulse {
-
-    0%,100% {
-        transform:
-            scale(1);
-    }
-
-    50% {
-        transform:
-            scale(1.45);
-    }
-
-}
-
-
-@keyframes squareMove {
-
-    0%,100% {
-        transform:
-            translate(120px,-80px)
-            rotate(45deg);
-    }
-
-    50% {
-        transform:
-            translate(-130px,90px)
-            rotate(180deg);
-    }
-
-}
-
-
-@keyframes lineMove {
-
-    0%,100% {
-        transform:
-            translateX(-120px)
-            rotate(-14deg);
-    }
-
-    50% {
-        transform:
-            translateX(120px)
-            rotate(14deg);
-    }
-
-}
-
-
-/* =========================================================
+/* -------------------------
    MOBILE
-========================================================= */
+------------------------- */
 
-@media(max-width: 850px) {
+@media (max-width: 850px) {
 
-    .navbar {
-
-        height:
-            68px;
-
-        padding:
-            0 5vw;
+    nav {
+        grid-template-columns: 1fr auto;
+        height: 70px;
+        padding: 0 5vw;
     }
-
 
     .nav-links {
-
-        gap:
-            15px;
-
-        font-size:
-            12px;
+        display: none;
     }
 
-
-    .resume {
-
-        padding:
-            11px 14px;
-
-        font-size:
-            12px;
+    .logo {
+        font-size: 19px;
     }
 
+    .resume-wrap .button {
+        padding: 11px 16px;
+        font-size: 12px;
+    }
 
     .hero {
-
-        grid-template-columns:
-            1fr;
-
-        padding-top:
-            120px;
+        padding-top: 125px;
+        grid-template-columns: 1fr;
     }
-
 
     .hero h1 {
-
-        font-size:
-            clamp(65px, 17vw, 100px);
-
-        letter-spacing:
-            -5px;
+        font-size: clamp(62px, 18vw, 100px);
+        letter-spacing: -5px;
     }
 
-
-    .hero h1 em {
-
-        letter-spacing:
-            -4px;
+    .hero h1 span {
+        letter-spacing: -4px;
     }
-
-
-    .hero-description {
-
-        font-size:
-            17px;
-    }
-
 
     .hero-visual {
-
-        min-height:
-            520px;
-
-        margin-top:
-            30px;
+        min-height: 500px;
     }
 
-
-    .photo {
-
-        width:
-            min(380px, 82vw);
-
-        height:
-            500px;
+    .photo-frame {
+        width: 75%;
     }
 
-
-    .sticker {
-
-        right:
-            0;
+    .section-top {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-
-    section {
-
-        padding:
-            90px 6vw;
+    .work-item {
+        grid-template-columns: 1fr;
+        gap: 35px;
     }
 
-
-    .work-head {
-
-        display:
-            block;
+    .work-copy {
+        max-width: 100%;
     }
 
-
-    .work-intro {
-
-        margin-top:
-            20px;
+    .about {
+        grid-template-columns: 1fr;
+        gap: 45px;
     }
 
-
-    .work,
-    .work.reverse {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            40px;
-
-        padding:
-            60px 0;
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
     }
 
-
-    .work.reverse .work-media {
-
-        order:
-            initial;
+    .interlude-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
     }
 
-
-    .work-media {
-
-        min-height:
-            350px;
+    .contact-card {
+        padding: 40px 28px;
+        min-height: 400px;
     }
 
-
-    .work-media video {
-
-        height:
-            400px;
+    .contact-card h2 {
+        letter-spacing: -4px;
     }
-
-
-    .attention-art,
-    .packaging-art,
-    .message-art {
-
-        height:
-            380px;
-    }
-
-
-    .about,
-    .experience {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            50px;
-    }
-
-
-    .experience-item {
-
-        grid-template-columns:
-            100px 1fr;
-    }
-
-
-    .mystery-grid {
-
-        transform:
-            rotate(-4deg)
-            scale(.7);
-    }
-
-
-    .contact {
-
-        margin:
-            15px 3vw;
-
-        padding:
-            70px 7vw;
-    }
-
-
-    .contact h2 {
-
-        letter-spacing:
-            -5px;
-    }
-
 
     footer {
-
-        flex-direction:
-            column;
-
-        gap:
-            10px;
+        flex-direction: column;
+        gap: 10px;
     }
-
 }
 
 </style>
-
 </head>
 
 
 <body>
 
+<!-- ================= NAV ================= -->
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<nav>
 
-<header class="navbar">
-
-    <a
-        href="#top"
-        class="logo"
-    >
+    <a href="#top" class="logo">
         Ardra Akhilan
     </a>
 
+    <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-    <nav class="nav-links">
-
-        <a href="#work">
-            Work
+    <div class="resume-wrap">
+        <a
+            href="Ardra_A_2026.pdf"
+            target="_blank"
+            class="button"
+        >
+            Resume ↗
         </a>
+    </div>
 
-        <a href="#about">
-            About
-        </a>
-
-        <a href="#contact">
-            Contact
-        </a>
-
-    </nav>
+</nav>
 
 
-    <a
-        href="Ardra_A_2026.pdf"
-        target="_blank"
-        class="resume"
-    >
-        Resume ↗
-    </a>
-
-</header>
-
-
+<!-- ================= HERO ================= -->
 
 <main id="top">
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
 <section class="hero">
 
+    <div class="hero-copy reveal">
 
-    <div class="hero-content">
-
-        <div class="hello">
+        <div class="eyebrow">
             Hi, I'm Ardra Akhilan.
         </div>
 
-
         <h1>
-
             Ideas,
-
-            <br>
-
-            <em>
-                made matter.
-            </em>
-
+            <span>made matter.</span>
         </h1>
 
-
         <p class="hero-description">
-
-            I work at the intersection of
-            marketing, analytics and creativity —
-            turning observations into stories,
-            strategies and things people remember.
-
+            I work at the intersection of marketing, analytics and
+            creativity — turning observations into stories, strategies
+            and things people remember.
         </p>
-
 
         <div class="tags">
 
-            <span class="tag">
-                Marketing
-            </span>
-
-            <span class="tag">
-                Analytics
-            </span>
-
-            <span class="tag">
-                Storytelling
-            </span>
-
-            <span class="tag">
-                Creative Strategy
-            </span>
+            <div class="tag">Marketing</div>
+            <div class="tag">Analytics</div>
+            <div class="tag">Storytelling</div>
+            <div class="tag">Creative Strategy</div>
 
         </div>
 
+        <div class="hero-actions">
 
-        <a
-            href="#work"
-            class="primary"
-        >
+            <a href="#work" class="button">
+                See my work ↗
+            </a>
 
-            See my work
-
-            <span>↗</span>
-
-        </a>
+        </div>
 
     </div>
 
 
+    <div class="hero-visual reveal">
 
-    <div class="hero-visual">
+        <div class="blob blob-yellow"></div>
+        <div class="blob blob-blue"></div>
+        <div class="blob blob-pink"></div>
 
-
-        <div class="decor yellow"></div>
-
-        <div class="decor blue"></div>
-
-        <div class="decor pink"></div>
-
-
-        <div class="photo">
+        <div class="photo-frame">
 
             <img
                 src="profile.jpg"
                 alt="Ardra Akhilan"
+                onerror="this.style.display='none'; this.parentElement.classList.add('photo-missing')"
             >
 
         </div>
 
-
-        <div class="sticker">
-
-            <strong>
-                curious mind.
-            </strong>
-
-            <span>
-                always looking closer.
-            </span>
-
+        <div class="photo-note">
+            curious mind.
+            <small>always looking closer.</small>
         </div>
 
     </div>
@@ -2006,69 +1145,44 @@ footer {
 </section>
 
 
+<!-- ================= LITTLE INTERACTION ================= -->
 
-<!-- =====================================================
-     MYSTERY INTERACTION
-===================================================== -->
+<div class="interlude reveal">
 
-<section class="mystery">
+    <div class="interlude-box">
 
+        <div class="interlude-text">
 
-    <div class="mystery-box">
+            <span>Something small</span>
 
+            <h3>
+                Notice what moves.
+            </h3>
 
-        <div class="mystery-orbit"></div>
+        </div>
 
+        <div class="shape-field">
 
-        <div
-            class="mystery-grid"
-            id="mysteryGrid"
-        >
-
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <div class="shape square"></div>
+            <div class="shape circle"></div>
+            <div class="shape-ring"></div>
 
         </div>
 
     </div>
 
-</section>
+</div>
 
 
-
-<!-- =====================================================
-     WORK
-===================================================== -->
+<!-- ================= WORK ================= -->
 
 <section id="work">
 
-
-    <div class="work-head reveal">
+    <div class="section-top reveal">
 
         <div>
 
-            <div class="label">
+            <div class="section-label">
                 Selected work
             </div>
 
@@ -2078,589 +1192,508 @@ footer {
 
         </div>
 
-
-        <p class="work-intro">
-
-            I like taking ordinary ideas and
-            finding the small detail that makes
-            someone stop, look twice and remember.
-
+        <p class="section-intro">
+            I like ideas that make people pause for a second —
+            whether they live in a campaign, a product, a package
+            or a small visual detail.
         </p>
 
     </div>
 
 
+    <!-- SHIRT -->
 
-<!-- =====================================================
-     WORK 01 — SHIRT
-===================================================== -->
+    <article class="work-item">
 
-<div class="work reveal">
+        <div class="work-copy slide-left">
+
+            <div class="work-number">
+                01 / MOTION EXPERIMENT
+            </div>
+
+            <h3>
+                A shirt,<br>
+                but make it move.
+            </h3>
+
+            <p>
+                I wanted to explore how an ordinary product can become
+                more interesting through movement, visual rhythm and
+                storytelling.
+            </p>
+
+            <p>
+                Instead of immediately explaining the product,
+                the visual lets curiosity do some of the work.
+            </p>
+
+            <span class="work-value">
+                motion · attention · story
+            </span>
+
+        </div>
 
 
-    <div class="work-media">
+        <div class="work-visual shirt-stage slide-right">
 
-        <video
-            autoplay
-            muted
-            loop
-            playsinline
-        >
-
-            <source
+            <video
                 src="shirt-animation.mp4"
-                type="video/mp4"
-            >
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+            ></video>
 
-        </video>
-
-    </div>
-
-
-    <div class="work-info">
-
-        <div class="count">
-            01 / MOTION EXPERIMENT
-        </div>
-
-
-        <h3>
-            A shirt,
-            but make it move.
-        </h3>
-
-
-        <p>
-
-            I wanted to explore how an
-            ordinary product can become more
-            interesting through movement,
-            visual rhythm and storytelling.
-
-        </p>
-
-
-        <p>
-
-            Instead of immediately explaining
-            the product, the visual creates a
-            small moment of curiosity first.
-
-        </p>
-
-
-        <span class="reason">
-            curiosity → attention → memory
-        </span>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     WORK 02 — ATTENTION
-===================================================== -->
-
-<div class="work reverse reveal">
-
-
-    <div class="work-media">
-
-        <div class="attention-art">
-
-            <div class="attention-square"></div>
-
-            <div class="attention-circle"></div>
+            <div class="video-label">
+                motion study
+            </div>
 
         </div>
 
-    </div>
+    </article>
 
 
-    <div class="work-info">
+    <!-- PACKAGING -->
 
-        <div class="count">
-            02 / CREATIVE EXPERIMENT
+    <article class="work-item">
+
+        <div class="work-copy slide-left">
+
+            <div class="work-number">
+                02 / PACKAGING CONCEPT
+            </div>
+
+            <h3>
+                Packaging<br>
+                with a second life.
+            </h3>
+
+            <p>
+                A self-created sustainability packaging concept built
+                around one question:
+                <strong>what if the package felt worth keeping?</strong>
+            </p>
+
+            <p>
+                The restrained form, refill-first idea and tactile
+                identity are designed to make sustainability feel
+                desirable rather than instructional.
+            </p>
+
+            <span class="work-value">
+                sustainability · branding · experience
+            </span>
+
         </div>
 
 
-        <h3>
-            The 3-second window.
-        </h3>
+        <div class="work-visual package-stage slide-right">
 
+            <div class="package-scene">
 
-        <p>
+                <div class="package-face package-front">
 
-            People don't give every message
-            their attention. Sometimes the
-            first three seconds decide whether
-            something gets noticed at all.
+                    <div class="package-brand">
+                        SECOND LIFE
+                    </div>
 
-        </p>
+                    <div class="package-title">
+                        Everyday,<br>
+                        again.
+                    </div>
 
+                    <div class="package-leaf">
+                        ◒
+                    </div>
 
-        <p>
-
-            I created this visual around one
-            simple idea: use movement and
-            contrast to create a reason to pause.
-
-        </p>
-
-
-        <span class="reason">
-            attention before information
-        </span>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     WORK 03 — PACKAGING
-===================================================== -->
-
-<div class="work reveal">
-
-
-    <div class="work-media">
-
-        <div class="packaging-art">
-
-
-            <div class="package">
-
-                <div class="package-top">
-                    SOMETHING.
-                </div>
-
-
-                <div class="package-body">
-
-                    <h4>
-                        ordinary
-                        <br>
-                        made curious.
-                    </h4>
-
-
-                    <p>
-                        A packaging concept
-                        built around curiosity,
-                        simplicity and visual
-                        recognition.
-                    </p>
+                    <div class="package-bottom">
+                        refillable everyday essentials<br>
+                        designed to stay.
+                    </div>
 
                 </div>
 
 
-                <div class="package-dot"></div>
+                <div class="package-face package-back">
+
+                    <div class="package-brand">
+                        A SMALLER FOOTPRINT.
+                    </div>
+
+                    <div class="package-title">
+                        Refill.<br>
+                        Reuse.<br>
+                        Repeat.
+                    </div>
+
+                    <div class="package-details">
+
+                        <div class="package-pill">
+                            REFILLABLE
+                        </div>
+
+                        <div class="package-pill">
+                            REUSABLE
+                        </div>
+
+                        <div class="package-pill">
+                            LESS WASTE
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="package-side"></div>
 
             </div>
 
         </div>
 
-    </div>
+    </article>
 
 
-    <div class="work-info">
+    <!-- BRANDING VISUAL -->
 
-        <div class="count">
-            03 / BRAND EXPERIENCE
+    <article class="work-item">
+
+        <div class="work-copy slide-left">
+
+            <div class="work-number">
+                03 / BRAND EXPERIENCE
+            </div>
+
+            <h3>
+                Make people<br>
+                look twice.
+            </h3>
+
+            <p>
+                A visual identity experiment built around the idea that
+                good communication doesn't always need to shout.
+            </p>
+
+            <p>
+                The system uses contrast, whitespace and one unexpected
+                visual cue to create a moment of curiosity.
+            </p>
+
+            <span class="work-value">
+                visual language · curiosity · recall
+            </span>
+
         </div>
 
 
-        <h3>
-            Packaging
-            that speaks.
-        </h3>
+        <div class="work-visual" style="background:#b9e7c5;">
 
+            <div style="
+                width:220px;
+                height:280px;
+                background:#fffdf9;
+                border-radius:20px;
+                padding:28px;
+                box-shadow:0 25px 40px rgba(0,0,0,.12);
+                transform:rotate(-5deg);
+                position:relative;
+            ">
 
-        <p>
+                <div style="
+                    font-size:10px;
+                    font-weight:700;
+                    letter-spacing:1px;
+                ">
+                    ORDINARY / UNEXPECTED
+                </div>
 
-            Packaging is often treated as
-            information. I wanted to treat it
-            as the first piece of communication
-            between a product and a person.
+                <div style="
+                    font-family:'Playfair Display',serif;
+                    font-style:italic;
+                    font-size:38px;
+                    line-height:.9;
+                    margin-top:65px;
+                ">
+                    Look<br>
+                    again.
+                </div>
 
-        </p>
-
-
-        <p>
-
-            The concept uses very little text,
-            a strong visual hierarchy and one
-            memorable phrase.
-
-        </p>
-
-
-        <span class="reason">
-            recognition beats explanation
-        </span>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     WORK 04 — COMMUNICATION
-===================================================== -->
-
-<div class="work reverse reveal">
-
-
-    <div class="work-media">
-
-        <div class="message-art">
-
-
-            <div class="message-line"></div>
-
-
-            <div class="message-card">
-
-                <small>
-                    A small thought
-                </small>
-
-
-                <h4>
-                    Say less.
-                    Mean more.
-                </h4>
-
-
-                <span>
-                    MESSAGE DESIGN
-                </span>
+                <div style="
+                    position:absolute;
+                    bottom:25px;
+                    left:28px;
+                    width:35px;
+                    height:35px;
+                    background:#ff9fc4;
+                    border-radius:50%;
+                "></div>
 
             </div>
 
         </div>
 
-    </div>
-
-
-    <div class="work-info">
-
-        <div class="count">
-            04 / COMMUNICATION CONCEPT
-        </div>
-
-
-        <h3>
-            One idea.
-            Many ways.
-        </h3>
-
-
-        <p>
-
-            The same message can feel completely
-            different depending on how it is
-            presented.
-
-        </p>
-
-
-        <p>
-
-            I created this as a visual experiment
-            around simplicity — showing how
-            composition itself can become part
-            of the message.
-
-        </p>
-
-
-        <span class="reason">
-            how you say it matters
-        </span>
-
-    </div>
-
-</div>
-
+    </article>
 
 </section>
 
 
+<!-- ================= INTERACTION ================= -->
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+<div class="interlude reveal">
 
-<section
-    id="about"
-    class="about reveal"
->
+    <div class="interlude-box">
+
+        <div class="interlude-text">
+
+            <span>Keep looking</span>
+
+            <h3>
+                The interesting part is usually smaller.
+            </h3>
+
+        </div>
+
+        <div class="shape-field">
+
+            <div
+                class="shape square"
+                style="background:#9edbff;"
+            ></div>
+
+            <div
+                class="shape circle"
+                style="background:#ff9fc4;"
+            ></div>
+
+            <div
+                class="shape-ring"
+                style="border-color:#ffd447;"
+            ></div>
+
+        </div>
+
+    </div>
+
+</div>
 
 
-    <div>
+<!-- ================= ABOUT ================= -->
 
-        <div class="label">
+<section id="about" class="about">
+
+    <div class="reveal">
+
+        <div class="section-label">
             About
         </div>
 
-
         <h2>
-
-            More than
-
-            <br>
-
+            More than<br>
             a job title.
-
         </h2>
 
     </div>
 
 
-    <div class="about-copy">
+    <div class="about-copy reveal">
 
         <p>
-
             I'm an MBA student at
-            <strong>
-                Amrita School of Business
-            </strong>,
-            interested in how people think,
-            why brands behave the way they do,
-            and how a good idea can travel from
-            a spreadsheet to someone's screen.
-
+            <strong>Amrita School of Business</strong>,
+            interested in how people think, why brands behave the way
+            they do, and how a good idea can travel from a spreadsheet
+            to someone's screen.
         </p>
-
-
-        <br>
-
 
         <p>
-
-            I enjoy market research,
-            competitor analysis, AI search
-            visibility, content and visual
-            storytelling — especially when
-            they overlap.
-
+            My interests sit across
+            <strong>market research, competitor analysis,
+            AI search visibility, content and visual storytelling</strong>
+            — especially when they overlap.
         </p>
-
-
-        <br>
-
 
         <p>
-
-            I'm interested in the space between
-            <strong>
-                data and ideas.
-            </strong>
-
+            I enjoy taking something ordinary, looking at it from
+            another angle, and asking:
+            <strong>what would make someone care?</strong>
         </p>
+
+
+        <div class="about-chips">
+
+            <div class="about-chip">Consumer behaviour</div>
+            <div class="about-chip">Market research</div>
+            <div class="about-chip">AI & search</div>
+            <div class="about-chip">Creative strategy</div>
+            <div class="about-chip">Visual storytelling</div>
+
+        </div>
 
     </div>
 
 </section>
 
 
+<!-- ================= EXPERIENCE ================= -->
 
-<!-- =====================================================
-     EXPERIENCE
-===================================================== -->
+<section>
 
-<section class="experience reveal">
+    <div class="experience-grid">
 
+        <div class="reveal">
 
-    <div>
-
-        <div class="label">
-            Experience
-        </div>
-
-
-        <h2 class="section-title">
-
-            What I've
-
-            <br>
-
-            been up to.
-
-        </h2>
-
-    </div>
-
-
-    <div class="experience-list">
-
-
-        <div class="experience-item">
-
-            <div class="experience-date">
-                04/2026 — 06/2026
+            <div class="section-label">
+                Experience
             </div>
 
-
-            <div>
-
-                <h3>
-                    Social Champs — GoVisible AI
-                </h3>
-
-
-                <p>
-                    Competitor benchmarking,
-                    market research and AI-search
-                    analysis across 100+ industries.
-                </p>
-
-            </div>
+            <h2 class="experience-title">
+                What I've<br>
+                been up to.
+            </h2>
 
         </div>
 
 
+        <div class="reveal">
 
-        <div class="experience-item">
+            <div class="exp-row">
 
-            <div class="experience-date">
-                04/2026 — 06/2026
+                <div class="exp-date">
+                    04/2026 — 06/2026
+                </div>
+
+                <div>
+
+                    <div class="exp-name">
+                        Social Champs — GoVisible AI
+                    </div>
+
+                    <div class="exp-desc">
+                        Competitor benchmarking, market research and
+                        AI-search analysis across 100+ industries,
+                        along with GEO/AEO analysis and client-facing
+                        strategic recommendations.
+                    </div>
+
+                </div>
+
             </div>
 
 
-            <div>
+            <div class="exp-row">
 
-                <h3>
-                    Corporate 360 Hub — Live Project
-                </h3>
+                <div class="exp-date">
+                    04/2026 — 06/2026
+                </div>
+
+                <div>
+
+                    <div class="exp-name">
+                        Corporate 360 Hub — Live Project
+                    </div>
+
+                    <div class="exp-desc">
+                        Business development, market research and
+                        go-to-market strategy across FMCG, Electrical
+                        and Consumer Goods sectors.
+                    </div>
+
+                </div>
+
+            </div>
 
 
-                <p>
-                    Business development, market
-                    research and go-to-market strategy
-                    across FMCG, Electrical and
-                    Consumer Goods sectors.
-                </p>
+            <div class="exp-row">
+
+                <div class="exp-date">
+                    06/2025 — Present
+                </div>
+
+                <div>
+
+                    <div class="exp-name">
+                        Finance Committee — Pragati, ASB
+                    </div>
+
+                    <div class="exp-desc">
+                        Arts and Culture.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="exp-row">
+
+                <div class="exp-date">
+                    02/2024 — 03/2024
+                </div>
+
+                <div>
+
+                    <div class="exp-name">
+                        Dubai Port World Cochin
+                    </div>
+
+                    <div class="exp-desc">
+                        Exposure to B2B customer relationship management
+                        and commercial operations.
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
-
-
-
-        <div class="experience-item">
-
-            <div class="experience-date">
-                06/2025 — Present
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Finance Committee — Pragati, ASB
-                </h3>
-
-
-                <p>
-                    Arts and Culture.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="experience-item">
-
-            <div class="experience-date">
-                02/2024 — 03/2024
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Dubai Port World Cochin
-                </h3>
-
-
-                <p>
-                    Exposure to B2B customer
-                    relationship management
-                    and commercial operations.
-                </p>
-
-            </div>
-
-        </div>
-
 
     </div>
 
 </section>
 
 
+<!-- ================= FINAL CONTACT ================= -->
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
+<section id="contact" class="contact">
 
-<section
-    id="contact"
-    class="contact reveal"
->
+    <div class="contact-card reveal">
+
+        <div>
+
+            <div class="section-label" style="color:#aaa;">
+                Contact
+            </div>
+
+            <h2>
+                Let's make<br>
+                <span>something good.</span>
+            </h2>
+
+        </div>
 
 
-    <div class="label">
-        Contact
+        <div>
+
+            <p style="
+                max-width:430px;
+                color:#aaa;
+                line-height:1.5;
+            ">
+                For projects, ideas, collaborations or just a good
+                conversation.
+            </p>
+
+            <a
+                class="contact-button"
+                href="mailto:ardraakhilanpvr@gmail.com?subject=Let's%20connect"
+            >
+                Let's talk ↗
+            </a>
+
+        </div>
+
     </div>
-
-
-    <h2>
-
-        Let's make
-
-        <br>
-
-        something good.
-
-    </h2>
-
-
-    <p class="contact-description">
-
-        For projects, ideas, collaborations
-        or just a good conversation.
-
-    </p>
-
-
-    <a
-        href="mailto:ardraakhilanpvr@gmail.com"
-        class="email"
-    >
-        ardraakhilanpvr@gmail.com
-    </a>
-
-
-    <br>
-
-
-    <a
-        href="mailto:ardraakhilanpvr@gmail.com"
-        class="contact-button"
-    >
-        Get in touch ↗
-    </a>
-
 
 </section>
 
@@ -2668,207 +1701,179 @@ footer {
 </main>
 
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer>
 
-    <span>
+    <div>
         © Ardra Akhilan
-    </span>
+    </div>
 
-
-    <span>
+    <div>
         Made with curiosity.
-    </span>
+    </div>
 
 </footer>
 
 
-
 <script>
 
-/* =========================================================
+/* --------------------------------
    SCROLL REVEAL
-========================================================= */
+-------------------------------- */
 
-const revealElements =
-    document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
+);
 
 
-const observer =
+document
+    .querySelectorAll(".reveal, .slide-left, .slide-right")
+    .forEach((element) => {
+
+        observer.observe(element);
+
+    });
+
+
+/* --------------------------------
+   NAV ACTIVE FEEL
+-------------------------------- */
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 180;
+
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.style.opacity =
+            link.getAttribute("href") === "#" + current
+            ? "1"
+            : ".55";
+
+    });
+
+});
+
+
+/* --------------------------------
+   SMALL MOUSE MOVEMENT
+-------------------------------- */
+
+const heroVisual = document.querySelector(".hero-visual");
+
+if (heroVisual) {
+
+    heroVisual.addEventListener("mousemove", (event) => {
+
+        const rect = heroVisual.getBoundingClientRect();
+
+        const x =
+            (event.clientX - rect.left) / rect.width - .5;
+
+        const y =
+            (event.clientY - rect.top) / rect.height - .5;
+
+        const photo =
+            heroVisual.querySelector(".photo-frame");
+
+        if (photo) {
+
+            photo.style.transform =
+                `rotate(${3 + x * 4}deg)
+                 translate(${x * 8}px, ${y * 8}px)`;
+
+        }
+
+    });
+
+    heroVisual.addEventListener("mouseleave", () => {
+
+        const photo =
+            heroVisual.querySelector(".photo-frame");
+
+        if (photo) {
+
+            photo.style.transform =
+                "rotate(3deg)";
+
+        }
+
+    });
+
+}
+
+
+/* --------------------------------
+   PAUSE PACKAGE WHEN NOT VISIBLE
+-------------------------------- */
+
+const packageScene =
+    document.querySelector(".package-scene");
+
+const packageObserver =
     new IntersectionObserver(
 
-        (entries) => {
+        entries => {
 
-            entries.forEach(
+            entries.forEach(entry => {
 
-                (entry) => {
+                if (entry.isIntersecting) {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+                    packageScene.style.animationPlayState =
+                        "running";
 
-                        entry.target.classList.add(
-                            "visible"
-                        );
+                } else {
 
-                    }
+                    packageScene.style.animationPlayState =
+                        "paused";
 
                 }
 
-            );
+            });
 
         },
 
         {
-            threshold: 0.12
+            threshold: .1
         }
 
     );
 
-
-revealElements.forEach(
-    element => observer.observe(element)
-);
-
-
-
-/* =========================================================
-   MYSTERY INTERACTION
-========================================================= */
-
-const mysteryTiles =
-    document.querySelectorAll(
-        "#mysteryGrid span"
-    );
-
-
-mysteryTiles.forEach(
-
-    tile => {
-
-        tile.addEventListener(
-            "mouseenter",
-            () => {
-
-                const random =
-                    Math.random();
-
-                if(random > .55) {
-
-                    tile.style.background =
-                        "#f6cf45";
-
-                }
-
-            }
-        );
-
-
-        tile.addEventListener(
-            "mouseleave",
-            () => {
-
-                setTimeout(
-
-                    () => {
-
-                        tile.style.background =
-                            "";
-
-                    },
-
-                    300
-
-                );
-
-            }
-        );
-
-    }
-
-);
-
-
-/* =========================================================
-   SUBTLE MOUSE MOVEMENT
-========================================================= */
-
-const heroVisual =
-    document.querySelector(
-        ".hero-visual"
-    );
-
-
-window.addEventListener(
-
-    "mousemove",
-
-    (event) => {
-
-        if(!heroVisual) return;
-
-
-        const x =
-            (event.clientX /
-            window.innerWidth - .5);
-
-
-        const y =
-            (event.clientY /
-            window.innerHeight - .5);
-
-
-        const photo =
-            document.querySelector(
-                ".photo"
-            );
-
-
-        if(photo) {
-
-            photo.style.transform =
-                `rotate(${3 + x * 2}deg)
-                 translate(${x * 7}px,
-                 ${y * 7}px)`;
-
-        }
-
-    }
-
-);
-
-
-/* =========================================================
-   VIDEO FALLBACK
-========================================================= */
-
-const video =
-    document.querySelector(
-        ".work-media video"
-    );
-
-
-if(video) {
-
-    video.addEventListener(
-        "error",
-        () => {
-
-            video.parentElement.style.background =
-                "#ddd";
-
-        }
-    );
-
+if (packageScene) {
+    packageObserver.observe(packageScene);
 }
 
 </script>
 
-
 </body>
-
 </html>
