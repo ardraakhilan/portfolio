@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ardra Akhilan — Marketing, Analytics, GEO and Creative Strategy">
-<title>Ardra Akhilan — Marketing & Analytics</title>
+<meta name="description" content="Ardra Akhilan Marketing, Analytics, GEO and Creative Strategy">
+<title>Ardra Akhilan Marketing & Analytics</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
@@ -220,12 +220,28 @@ button{font:inherit}
 @keyframes float{50%{transform:translateY(-16px)}} @keyframes drift{50%{transform:translate(-25px,20px)}}
 @keyframes morph{0%,100%{border-radius:49% 51% 47% 53%}50%{border-radius:55% 45% 52% 48%}}
 
+
+.linkedin-section{margin:0 7vw 105px;padding:75px 7%;border-radius:30px;background:#e9e4da;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:7vw;overflow:hidden;position:relative}
+.linkedin-art{height:360px;position:relative;display:grid;place-items:center}
+.linkedin-a{width:190px;height:190px;border-radius:52% 48% 45% 55%;background:#171717;color:#f5c943;display:grid;place-items:center;font-size:120px;font-weight:700;letter-spacing:-.12em;box-shadow:0 25px 50px #17171725;transform:rotate(-7deg);animation:aFloat 5s ease-in-out infinite;position:relative;z-index:3}
+.linkedin-a:after{content:"";position:absolute;width:42px;height:42px;border-radius:50%;background:#f49abb;right:-25px;top:20px;animation:aDot 3s ease-in-out infinite}
+.linkedin-ring{position:absolute;border:1px solid #17171722;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+.linkedin-ring.r1{width:285px;height:285px;animation:ring 12s linear infinite}.linkedin-ring.r2{width:345px;height:345px;animation:ringReverse 16s linear infinite}
+.linkedin-dot{position:absolute;width:13px;height:13px;border-radius:50%;background:#8ed7f7;box-shadow:0 0 18px #8ed7f7;animation:linkedinDot 4s ease-in-out infinite}
+.linkedin-dot.d1{left:8%;top:18%}.linkedin-dot.d2{right:7%;bottom:16%;background:#f5c943;box-shadow:0 0 18px #f5c943;animation-delay:1.5s}
+.linkedin-copy h2{margin:0;font-size:clamp(48px,6vw,78px);line-height:.88;letter-spacing:-.07em}.linkedin-copy h2 em{font-family:"Playfair Display",Georgia,serif}
+.linkedin-copy p{max-width:560px;color:#5f5950;font-size:15px;line-height:1.7;margin:28px 0}
+.linkedin-btn{display:inline-flex;padding:14px 20px;border-radius:999px;background:#171717;color:#fff;font-size:13px;font-weight:700}
+@keyframes aFloat{50%{transform:rotate(5deg) translateY(-14px)}} @keyframes aDot{50%{transform:scale(1.25) translate(-5px,8px)}}
+@keyframes ring{to{transform:translate(-50%,-50%) rotate(360deg)}} @keyframes ringReverse{to{transform:translate(-50%,-50%) rotate(-360deg)}}
+@keyframes linkedinDot{50%{transform:translateY(-18px) scale(1.35)}}
+
 @media(max-width:800px){
   .nav{grid-template-columns:1fr auto;height:68px;padding:0 5vw}.navlinks{display:none}
   .hero{grid-template-columns:1fr;padding:65px 6vw}.profile-stage{min-height:410px}
   .project,.project:nth-child(even){grid-template-columns:1fr;gap:32px}
   .project:nth-child(even) .project-copy,.project:nth-child(even) .visual{order:initial}
-  .visual{min-height:350px}.about{grid-template-columns:1fr;gap:35px}
+  .visual{min-height:350px}.about{grid-template-columns:1fr;gap:35px}.linkedin-section{grid-template-columns:1fr;margin:0 5vw 65px;padding:45px 8%;gap:20px}.linkedin-art{height:290px}
   .contact{margin:0 5vw 30px;padding:45px 30px}.footer{padding:25px 5vw 40px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
@@ -245,9 +261,9 @@ button{font:inherit}
 
 <section class="hero">
   <div class="reveal">
-    <div class="eyebrow">Marketing × Analytics × Creative Strategy</div>
-    <h1>Ideas,<br><em>made matter.</em></h1>
-    <p class="hero-copy">I work across marketing, analytics, GEO and creative strategy — turning observations into clear stories, useful insights and memorable experiences.</p>
+    <div class="eyebrow">Marketing × Analytics × Creative Thinking</div>
+    <h1>I like finding<br><em>the story inside.</em></h1>
+    <p class="hero-copy">Somewhere between a good question and a useful answer, there is usually a story worth telling. I like finding it in brands, numbers, people and the little details most of us scroll past.</p>
     <div class="pills">
       <span class="pill">Marketing</span><span class="pill">Analytics</span><span class="pill">GEO / AEO</span><span class="pill">Creative Strategy</span>
     </div>
@@ -264,7 +280,7 @@ button{font:inherit}
 <section class="section" id="work">
   <div class="section-head reveal">
     <div><div class="eyebrow">Selected work</div><h2>Things I make.</h2></div>
-    <p>Strategy, analysis and observation — translated into motion so the idea can be understood before it is explained.</p>
+    <p>Strategy, analysis and observation translated into motion so the idea can be understood before it is explained.</p>
   </div>
 
   <div class="work">
@@ -273,14 +289,14 @@ button{font:inherit}
     <article class="project reveal">
       <div class="project-copy">
         <div class="number">01 / GOVISIBLE</div>
-        <h3>Helping brands show up in AI.</h3>
-        <p>Exploring GEO through visibility, relevance, content structure and the signals that influence how a brand is understood by AI search.</p>
+        <h3>What does AI see when it sees a brand?</h3>
+        <p>I wanted to understand the new version of being found. So I looked at how content, relevance and context come together when an AI has to decide what deserves to be seen.</p>
         <span class="tag">GEO · AEO · AI Search</span>
       </div>
       <div class="visual geo">
         <div class="geo-ui">
           <div class="geo-top"><div class="geo-brand">GoVisible</div><div class="geo-live">AI VISIBILITY</div></div>
-          <div class="geo-query">“Which brand is the best answer for this customer?”</div>
+          <div class="geo-query">Which brand becomes the answer people remember?</div>
           <div class="geo-bars">
             <div class="gbar" style="--h:48%"><span class="touch"></span></div>
             <div class="gbar" style="--h:66%"><span class="touch"></span></div>
@@ -289,7 +305,7 @@ button{font:inherit}
             <div class="gbar" style="--h:71%"><span class="touch"></span></div>
             <div class="gbar" style="--h:92%"><span class="touch"></span></div>
           </div>
-          <div class="geo-insight"><span class="insight-dot"></span><span class="insight-text">Content clarity changes visibility.</span></div>
+          <div class="geo-insight"><span class="insight-dot"></span><span class="insight-text">The clearer the story, the easier it is to find.</span></div>
         </div>
       </div>
     </article>
@@ -298,20 +314,20 @@ button{font:inherit}
     <article class="project reveal">
       <div class="project-copy">
         <div class="number">02 / MARKETING ANALYTICS</div>
-        <h3>Finding the signal inside the numbers.</h3>
-        <p>Turning performance data into patterns, comparisons and decisions — not just dashboards.</p>
+        <h3>Numbers rarely tell the whole story.</h3>
+        <p>I enjoy the moment when a messy set of numbers starts making sense. The interesting part is not the dashboard. It is the question that appears after you look at it.</p>
         <span class="tag">Analytics · Insights · Decisions</span>
       </div>
       <div class="visual analytics">
         <div class="analytics-ui">
           <div class="analytics-head">
-            <div><div class="analytics-title">Campaign performance</div><div class="analytics-sub">signal → pattern → action</div></div>
+            <div><div class="analytics-title">Campaign performance</div><div class="analytics-sub">watch → understand → act</div></div>
             <div class="kpi">Opportunity<strong>+28%</strong></div>
           </div>
           <div class="chart">
             <div class="abar" style="--h:35%"></div><div class="abar" style="--h:51%"></div><div class="abar" style="--h:44%"></div><div class="abar" style="--h:68%"></div><div class="abar" style="--h:58%"></div><div class="abar" style="--h:88%"></div><div class="abar" style="--h:73%"></div>
           </div>
-          <div class="data-insights"><span>Spot movement</span><span>Compare signals</span><span>Choose next action</span></div>
+          <div class="data-insights"><span>Notice a change</span><span>Find the pattern</span><span>Decide what matters</span></div>
         </div>
       </div>
     </article>
@@ -320,8 +336,8 @@ button{font:inherit}
     <article class="project reveal">
       <div class="project-copy">
         <div class="number">03 / CORPORATE 360 HUB</div>
-        <h3>One business. Many signals.</h3>
-        <p>Connecting market research, competitors, customers and opportunities into one moving view — so the bigger picture becomes easier to act on.</p>
+        <h3>A business is never just one thing.</h3>
+        <p>A market moves because people move, competitors react and small signals become bigger ones. Corporate 360 became my way of looking at those pieces together before making a decision.</p>
         <span class="tag">Market Research · Competitor Analysis</span>
       </div>
       <div class="visual corporate">
@@ -341,7 +357,7 @@ button{font:inherit}
     <article class="project reveal">
       <div class="project-copy">
         <div class="number">04 / DUBAI PORT WORLD · COCHIN</div>
-        <h3>Seeing the system in motion.</h3>
+        <h3>A port is a story of movement.</h3>
         <p>A field-experience story built around people, cargo, movement, operations and the customer-facing side of a working port.</p>
         <span class="tag">Operations · Customer Experience</span>
       </div>
@@ -353,7 +369,7 @@ button{font:inherit}
           <div class="container2"></div>
           <div class="port-ship"></div>
           <div class="port-person"><div class="phead"></div><div class="helmet"></div><div class="pbody"></div><div class="parm"></div><div class="pleg a"></div><div class="pleg b"></div></div>
-          <div class="port-badge">FIELD OBSERVATION · COCHIN</div>
+          <div class="port-badge">A DAY AT THE PORT · COCHIN</div>
           <div class="port-readout"><span>PEOPLE</span><span>FLOW</span><span>OPERATIONS</span></div>
         </div>
       </div>
@@ -363,8 +379,8 @@ button{font:inherit}
     <article class="project reveal">
       <div class="project-copy">
         <div class="number">05 / PHOTOGRAPHY</div>
-        <h3>Looking closer.</h3>
-        <p>Photography is where I slow down — finding light, people, places and small details worth keeping.</p>
+        <h3>Sometimes the best frame is the one you almost miss.</h3>
+        <p>Photography is my excuse to slow down. I look for the light, the pause, the person in the distance and the small moment that makes an ordinary place feel different.</p>
         <a class="tag" href="https://www.instagram.com/olvearia/" target="_blank" rel="noopener">@olvearia ↗</a>
       </div>
       <div class="visual photo">
@@ -374,7 +390,7 @@ button{font:inherit}
             <div class="person-hair"></div><div class="person-head"></div><div class="person-body"></div><div class="person-arm"></div><div class="camera"></div>
           </div>
           <div class="photo-frame"><div class="mini-photo"></div></div>
-          <div class="insta-label">FRAME THE MOMENT</div>
+          <div class="insta-label">KEEP LOOKING</div>
           <a class="insta-link" href="https://www.instagram.com/olvearia/" target="_blank" rel="noopener">Instagram · @olvearia ↗</a>
         </div>
       </div>
@@ -384,24 +400,41 @@ button{font:inherit}
 </section>
 
 <section class="section about" id="about">
-  <div class="reveal"><div class="eyebrow">About</div><h2>More than<br>a job title.</h2></div>
+  <div class="reveal"><div class="eyebrow">About</div><h2>I am still<br>figuring things out.</h2></div>
   <div class="about-copy reveal">
-    <p>I'm an <strong>MBA student at Amrita School of Business</strong>, interested in how people think, why brands behave the way they do, and how a good idea can travel from a spreadsheet to someone's screen.</p>
-    <p>My interests sit across <strong>market research, competitor analysis, AI search visibility, analytics, content and visual storytelling</strong> — especially when they overlap.</p>
-    <p>I like taking something ordinary, looking at it from another angle, and asking: <strong>what would make someone care?</strong></p>
+    <p>I am an <strong>MBA student at Amrita School of Business</strong>. I am curious about why people choose what they choose, why some brands stay with us and why a simple idea can sometimes travel much further than expected.</p>
+    <p>I keep moving between <strong>market research, competitor analysis, AI search visibility, analytics, content and visual storytelling</strong>. The overlap is usually where things get interesting.</p>
+    <p>I tend to take something ordinary, turn it around a little and ask one simple question: <strong>why would someone care?</strong></p>
+  </div>
+</section>
+
+
+<section class="linkedin-section reveal" id="linkedin">
+  <div class="linkedin-art">
+    <div class="linkedin-a">A</div>
+    <div class="linkedin-ring r1"></div>
+    <div class="linkedin-ring r2"></div>
+    <div class="linkedin-dot d1"></div>
+    <div class="linkedin-dot d2"></div>
+  </div>
+  <div class="linkedin-copy">
+    <div class="eyebrow">A little more of the work</div>
+    <h2>Want to know<br><em>how I think?</em></h2>
+    <p>Take a look at the ideas, observations and conversations I share on LinkedIn. If you are curious about how brands work, how markets move or where a good story begins, you might find something interesting there.</p>
+    <a class="linkedin-btn" href="https://www.linkedin.com/in/ardraakhilan" target="_blank" rel="noopener">See me on LinkedIn ↗</a>
   </div>
 </section>
 
 <section class="contact reveal" id="contact">
   <div class="eyebrow" style="color:#aaa">Contact</div>
   <h2>Let's make<br><em>something good.</em></h2>
-  <p>For projects, ideas, collaborations or just a good conversation.</p>
+  <p>If you have a brand to understand, a question to explore or simply an idea you cannot stop thinking about, I would love to hear it.</p>
   <a class="email-btn" href="mailto:ardraakhilanpvr@gmail.com">Get in touch ↗</a>
 </section>
 
 <footer class="footer">
   <span>© Ardra Akhilan</span>
-  <span>Made with curiosity.<a class="social" href="https://www.instagram.com/olvearia/" target="_blank" rel="noopener"><i class="social-dot"></i> @olvearia</a></span>
+  <span>Made with curiosity.<a class="social" href="https://www.linkedin.com/in/ardraakhilan" target="_blank" rel="noopener">LinkedIn ↗</a><a class="social" href="https://www.instagram.com/olvearia/" target="_blank" rel="noopener"><i class="social-dot"></i> @olvearia</a></span>
 </footer>
 
 </main>
