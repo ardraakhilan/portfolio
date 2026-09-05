@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ardra Akhilan Marketing, Analytics, GEO and Creative Strategy">
-<title>Ardra Akhilan Marketing & Analytics</title>
+<meta name="description" content="Ardra Akhilan | Marketing, Analytics, GEO, SEO, AEO and Creative Strategy">
+<title>Ardra Akhilan | Marketing, Analytics & Creative Strategy</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2218%22%20fill%3D%22%23171717%22/%3E%0A%3Cpath%20d%3D%22M14%2049%2027%2014h10l13%2035h-9l-3-9H26l-3%209h-9Zm15-16h6l-3-10-3%2010Z%22%20fill%3D%22%23f5c943%22/%3E%0A%3Ccircle%20cx%3D%2250%22%20cy%3D%2215%22%20r%3D%226%22%20fill%3D%22%23f49abb%22/%3E%0A%3C/svg%3E">
+<meta name="theme-color" content="#f7f4ee">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
@@ -236,6 +238,114 @@ button{font:inherit}
 @keyframes ring{to{transform:translate(-50%,-50%) rotate(360deg)}} @keyframes ringReverse{to{transform:translate(-50%,-50%) rotate(-360deg)}}
 @keyframes linkedinDot{50%{transform:translateY(-18px) scale(1.35)}}
 
+
+/* Full-screen ambient cover: the visual mood shifts as a new story enters view. */
+.ambient{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 22%, #c9ecff66 0 7%, transparent 28%),
+    radial-gradient(circle at 18% 82%, #f7d7e766 0 5%, transparent 25%),
+    var(--paper);
+  transition:background 1.1s ease, filter 1.1s ease;
+}
+.ambient-orb{
+  position:absolute;
+  width:42vw;
+  height:42vw;
+  max-width:620px;
+  max-height:620px;
+  border-radius:50%;
+  right:-13vw;
+  top:18vh;
+  background:radial-gradient(circle,#f5c94335,#f49abb18 38%,transparent 70%);
+  filter:blur(4px);
+  transition:transform 1.4s cubic-bezier(.2,.8,.2,1),background 1.1s ease;
+}
+.ambient-word{
+  position:absolute;
+  right:4vw;
+  bottom:8vh;
+  font-size:clamp(90px,17vw,240px);
+  line-height:.8;
+  font-weight:700;
+  letter-spacing:-.1em;
+  color:#17171705;
+  transition:transform 1.2s ease, color 1s ease;
+}
+body[data-theme="geo"] .ambient{
+  background:
+    radial-gradient(circle at 76% 30%, #8264ff33 0 8%, transparent 31%),
+    radial-gradient(circle at 15% 70%, #8ed7f733 0 6%, transparent 25%),
+    var(--paper);
+}
+body[data-theme="geo"] .ambient-orb{background:radial-gradient(circle,#8264ff40,#8ed7f71f 40%,transparent 72%);transform:translate(-7vw,-3vh) scale(1.08)}
+body[data-theme="analytics"] .ambient{
+  background:
+    radial-gradient(circle at 20% 25%, #8ed7f738 0 8%, transparent 29%),
+    radial-gradient(circle at 83% 78%, #f5c9432d 0 7%, transparent 26%),
+    var(--paper);
+}
+body[data-theme="analytics"] .ambient-orb{background:radial-gradient(circle,#8ed7f750,#f5c94318 40%,transparent 72%);transform:translate(-3vw,6vh) scale(.92)}
+body[data-theme="corporate"] .ambient{
+  background:
+    radial-gradient(circle at 78% 28%, #a9dfbd42 0 8%, transparent 29%),
+    radial-gradient(circle at 20% 78%, #f5c94326 0 6%, transparent 26%),
+    var(--paper);
+}
+body[data-theme="corporate"] .ambient-orb{background:radial-gradient(circle,#a9dfbd52,#8ed7f71e 40%,transparent 72%);transform:translate(-8vw,4vh) scale(1.12)}
+body[data-theme="port"] .ambient{
+  background:
+    radial-gradient(circle at 75% 25%, #f4a26145 0 9%, transparent 30%),
+    radial-gradient(circle at 15% 80%, #8ed7f738 0 7%, transparent 27%),
+    var(--paper);
+}
+body[data-theme="port"] .ambient-orb{background:radial-gradient(circle,#f4a26155,#8ed7f71c 42%,transparent 72%);transform:translate(-4vw,-4vh) scale(1.06)}
+body[data-theme="photo"] .ambient{
+  background:
+    radial-gradient(circle at 76% 24%, #f49abb3d 0 8%, transparent 30%),
+    radial-gradient(circle at 22% 75%, #f5c9432b 0 7%, transparent 27%),
+    var(--paper);
+}
+body[data-theme="photo"] .ambient-orb{background:radial-gradient(circle,#f49abb4a,#f5c94320 40%,transparent 72%);transform:translate(-6vw,7vh) scale(.96)}
+body[data-theme="about"] .ambient{
+  background:
+    radial-gradient(circle at 20% 24%, #e7dccb80 0 9%, transparent 31%),
+    radial-gradient(circle at 83% 76%, #a9dfbd25 0 7%, transparent 28%),
+    var(--paper);
+}
+body[data-theme="about"] .ambient-orb{background:radial-gradient(circle,#e7dccb66,#a9dfbd1c 40%,transparent 72%);transform:translate(-2vw,-1vh)}
+body[data-theme="linkedin"] .ambient{
+  background:
+    radial-gradient(circle at 77% 24%, #f5c94336 0 8%, transparent 29%),
+    radial-gradient(circle at 18% 78%, #f49abb2e 0 7%, transparent 28%),
+    var(--paper);
+}
+body[data-theme="linkedin"] .ambient-orb{background:radial-gradient(circle,#f5c94346,#f49abb1d 42%,transparent 72%);transform:translate(-9vw,-2vh) scale(1.1)}
+body[data-theme="contact"] .ambient{
+  background:
+    radial-gradient(circle at 82% 18%, #f5c94330 0 9%, transparent 31%),
+    var(--paper);
+}
+body[data-theme="contact"] .ambient-orb{background:radial-gradient(circle,#f5c94342,transparent 70%);transform:translate(-12vw,-8vh) scale(1.16)}
+
+.facebook-icon{
+  width:30px;
+  height:30px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:50%;
+  background:#171717;
+  color:#fff;
+  margin-left:18px;
+  transition:transform .25s ease, background .25s ease;
+}
+.facebook-icon:hover{transform:translateY(-2px) scale(1.08);background:#315fba}
+.facebook-icon svg{width:16px;height:16px;fill:currentColor}
+
 @media(max-width:800px){
   .nav{grid-template-columns:1fr auto;height:68px;padding:0 5vw}.navlinks{display:none}
   .hero{grid-template-columns:1fr;padding:65px 6vw}.profile-stage{min-height:410px}
@@ -249,6 +359,7 @@ button{font:inherit}
 </head>
 
 <body>
+<div class="ambient" aria-hidden="true"><div class="ambient-orb"></div><div class="ambient-word">ARDRA</div></div>
 <header class="nav">
   <a class="logo" href="#top">Ardra Akhilan</a>
   <nav class="navlinks">
@@ -265,7 +376,7 @@ button{font:inherit}
     <h1>I like finding<br><em>the story inside.</em></h1>
     <p class="hero-copy">Somewhere between a good question and a useful answer, there is usually a story worth telling. I like finding it in brands, numbers, people and the little details most of us scroll past.</p>
     <div class="pills">
-      <span class="pill">Marketing</span><span class="pill">Analytics</span><span class="pill">GEO / AEO</span><span class="pill">Creative Strategy</span>
+      <span class="pill">Marketing</span><span class="pill">Analytics</span><span class="pill">GEO / AEO / SEO</span><span class="pill">Creative Strategy</span>
     </div>
     <a class="hero-cta" href="#work">See my work ↗</a>
   </div>
@@ -291,7 +402,7 @@ button{font:inherit}
         <div class="number">01 / GOVISIBLE</div>
         <h3>What does AI see when it sees a brand?</h3>
         <p>I wanted to understand the new version of being found. So I looked at how content, relevance and context come together when an AI has to decide what deserves to be seen.</p>
-        <span class="tag">GEO · AEO · AI Search</span>
+        <span class="tag">GEO · AEO · SEO · AI Search</span>
       </div>
       <div class="visual geo">
         <div class="geo-ui">
@@ -434,7 +545,8 @@ button{font:inherit}
 
 <footer class="footer">
   <span>© Ardra Akhilan</span>
-  <span>Made with curiosity.<a class="social" href="https://www.linkedin.com/in/ardraakhilan" target="_blank" rel="noopener">LinkedIn ↗</a><a class="social" href="https://www.instagram.com/olvearia/" target="_blank" rel="noopener"><i class="social-dot"></i> @olvearia</a></span>
+  <span>Made with curiosity.<a class="social" href="https://www.linkedin.com/in/ardraakhilan" target="_blank" rel="noopener">LinkedIn ↗</a><a class="facebook-icon" href="https://www.facebook.com/ardraakhilanpvr?mibextid=ZbWKwL" target="_blank" rel="noopener" aria-label="Facebook">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V10H8v3h2.6v8h2.9Z"/></svg></a><a class="social" href="https://www.instagram.com/olvearia/" target="_blank" rel="noopener"><i class="social-dot"></i> @olvearia</a></span>
 </footer>
 
 </main>
@@ -450,8 +562,28 @@ const observer = new IntersectionObserver(entries=>{
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
+/* The page changes visual mood as each chapter becomes the main thing on screen. */
+const chapters = [
+  ['.hero','hero'], ['#work','work'],
+  ['.project:nth-child(1)','geo'], ['.project:nth-child(2)','analytics'],
+  ['.project:nth-child(3)','corporate'], ['.project:nth-child(4)','port'],
+  ['.project:nth-child(5)','photo'], ['#about','about'],
+  ['#linkedin','linkedin'], ['#contact','contact']
+];
+const moodObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      document.body.dataset.theme = entry.target.dataset.mood;
+    }
+  });
+},{threshold:0.42});
+chapters.forEach(([selector,mood])=>{
+  const el=document.querySelector(selector);
+  if(el){ el.dataset.mood=mood; moodObserver.observe(el); }
+});
+
 /* Makes the GoVisible bars feel interactive when the pointer moves over them. */
-document.querySelectorAll('.gbar').forEach((bar,index)=>{
+document.querySelectorAll('.gbar').forEach(bar=>{
   bar.addEventListener('mouseenter',()=>{
     document.querySelectorAll('.gbar').forEach(b=>b.classList.remove('active'));
     bar.classList.add('active');
